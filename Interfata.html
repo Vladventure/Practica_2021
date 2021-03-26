@@ -1,0 +1,39 @@
+<body onload="initializare()">
+
+    <input type="number" id="suma" size="5" value="0"/>
+    <select id="monedaBaza" onchange="actualizareMonedaBaza(value)">
+      <option value="RON"> RON </option>
+      <option value="EUR"> EUR </option>
+      <option value="GBP"> GBP </option>
+      <option value="USD"> USD </option>
+      <option value="JPY"> JPY </option>
+      <option value="CAD"> CAD </option>
+    </select>
+
+    <b style="margin-left: 5px; margin-right: 5px;"> in </b>
+
+    <select id="monedaDorita" onchange="actualizareMonedaDorita(value)">
+      <option value="RON"> RON </option>
+      <option value="EUR"> EUR </option>
+      <option value="GBP"> GBP </option>
+      <option value="USD"> USD </option>
+      <option value="JPY"> JPY </option>
+      <option value="CAD"> CAD </option>
+    </select>
+
+    </br></br>
+
+    <button id="button" onclick="functieConversie()">Apasa pentru a converti</button>
+
+    <script>
+      var suma = document.getElementById("suma");
+      var monedaBaza = document.getElementById("monedaBaza");
+      var monedaDorita = document.getElementById("monedaDorita");
+
+      function functieConversie(){
+        google.script.run.conversie(suma.value, monedaBaza.value, monedaDorita.value);
+      }
+      
+    </script>
+
+</body>
